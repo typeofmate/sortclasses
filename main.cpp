@@ -7,10 +7,12 @@ class SortingStrategy
 	public:
 	virtual void sort(std::vector<int>& data) = 0;// если равно нулю то реализация происходит в дочерних классах
 };
+
 class BubbleSort : public SortingStrategy 
 {
 	public:
-	void sort(std::vector<int>& data) override { // override проверяет есть ли метод в родительском классе
+	void sort(std::vector<int>& data) override // override проверяет есть ли метод в родительском классе
+	{ 
 		for (size_t i = 0; i < data.size(); i++) 
 		{
 			for (size_t j = 0; j < data.size() - 1; j++)
@@ -22,6 +24,7 @@ class BubbleSort : public SortingStrategy
 		}
 	}
 };
+
 class StdSort : public SortingStrategy 
 {
 	public:
@@ -30,6 +33,27 @@ class StdSort : public SortingStrategy
 		std::sort(data.begin(), data.end());
 	}
 };
+
+//класс добавленный через отдельную ветку
+class InsertionSort : public SortingStrategy 
+{
+	public:
+		void sort(std::vector<int>& data) override 
+		{
+			for (size_t i = 1; i < data.size(); i++) 
+			{
+				int key = data[i];
+				int j = i - 1;
+				while (j >= 0 && data[j] > key) 
+				{
+					data[j + 1] = data[j];
+					j--;
+				}
+				data[j + 1] = key;
+			}
+		}
+};
+
 //класс использующий стратегию
 class Sorter 
 {
@@ -51,6 +75,7 @@ int main()
 	//создаются стратегии
 	BubbleSort bubbleStrategy;
 	StdSort stdStrategy;
+	InsertionSort insertionStrategy;
 
 	//Создам сортировщик с пузырьковой сортировкой  и выведу резы
 	Sorter bubbleSorter(&bubbleStrategy);
@@ -71,6 +96,16 @@ int main()
 
 	std::cout << "StdSort: ";
 	for (int num : data) std::cout << num << " ";
+	std::cout << "\n"
+	//вернул массив и провёл через новую сортировку
+	data = { 5,2,9,1,5,6 };
+
+	Sorter insertionSorter(&insertionStrategy);
+	insertionSorter.sortData(data);
+
+	std::cout << "Insertion: ";
+	for (int num : data) std::cout << num << " ";
+	std::cout << "\n"
 
 	return 0;
 }
