@@ -96,7 +96,7 @@ int main()
 
 	std::cout << "StdSort: ";
 	for (int num : data) std::cout << num << " ";
-	std::cout << "\n"
+	std::cout << "\n";
 	//вернул массив и провёл через новую сортировку
 	data = { 5,2,9,1,5,6 };
 
@@ -105,7 +105,7 @@ int main()
 
 	std::cout << "Insertion: ";
 	for (int num : data) std::cout << num << " ";
-	std::cout << "\n"
+	std::cout << "\n";
 
 	return 0;
 }
