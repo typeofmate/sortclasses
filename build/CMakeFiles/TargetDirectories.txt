@@ -1,0 +1,3 @@
+C:/Users/Матвей/Desktop/sort6/sortclasses/build/CMakeFiles/sortclasses.dir
+C:/Users/Матвей/Desktop/sort6/sortclasses/build/CMakeFiles/ALL_BUILD.dir
+C:/Users/Матвей/Desktop/sort6/sortclasses/build/CMakeFiles/ZERO_CHECK.dir

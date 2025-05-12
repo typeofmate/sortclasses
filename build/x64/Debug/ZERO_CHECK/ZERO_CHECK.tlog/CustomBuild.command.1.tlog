@@ -1,0 +1,10 @@
+^C:\USERS\МАТВЕЙ\DESKTOP\SORT6\SORTCLASSES\BUILD\CMAKEFILES\96B3D6E4CEEDBFF5CC51221BB828AA03\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/Матвей/Desktop/sort6/sortclasses -BC:/Users/Матвей/Desktop/sort6/sortclasses/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/Матвей/Desktop/sort6/sortclasses/build/sortclasses.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

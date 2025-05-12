@@ -1,0 +1,10 @@
+^C:\USERS\МАТВЕЙ\DESKTOP\SORT6\SORTCLASSES\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/Матвей/Desktop/sort6/sortclasses -BC:/Users/Матвей/Desktop/sort6/sortclasses/build --check-stamp-file C:/Users/Матвей/Desktop/sort6/sortclasses/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
